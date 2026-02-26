@@ -3,34 +3,146 @@
 <head>
     <title>AI Smart Fashion Aggregator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box input {
+            padding: 12px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ff9900;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
 </head>
-<body style="text-align:center; margin-top:100px; font-family:Arial;">
 
-    <h1>AI Smart Fashion Aggregator</h1>
+<body>
 
-    <p>
-        This platform helps users compare fashion products from Amazon
-        and provides smart outfit recommendations based on their wardrobe.
-    </p>
+<header>
+    AI Smart Fashion Aggregator
+</header>
 
-    <input type="text" placeholder="Search fashion products..." 
-           style="padding:10px; width:300px;">
-    <br><br>
+<div class="container">
 
-    <button style="padding:10px 20px;">
-        Search
-    </button>
-    <p style="margin-top:30px;">
-  Example Product:
-</p>
+    <div class="search-box">
+        <input type="text" placeholder="Search fashion products...">
+        <button>Search</button>
+    </div>
 
-<a href="https://amzn.to/46p4F6S" target="_blank" 
-   style="text-decoration:none; font-size:18px;">
-   🛒 Buy Black Shirt on Amazon
-</a>
-    <p style="margin-top:40px; color:gray;">
-        🚀 Version 1 – Amazon Affiliate Integration Coming Soon
-    </p>
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1520975922071-0c6a3b2b8f2e" alt="Black Shirt">
+            <h3>Men's Black Casual Shirt</h3>
+            <div class="price">₹799</div>
+            <a href="https://amzn.to/46p4F6S" target="_blank" class="buy-btn">
+                Buy on Amazon
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="Blue Denim">
+            <h3>Light Blue Denim Jeans</h3>
+            <div class="price">₹1,299</div>
+            <a href="https://amzn.to/46p4F6S" target="_blank" class="buy-btn">
+                Buy on Amazon
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1528701800489-20be3c8bda64" alt="White T-Shirt">
+            <h3>Classic White T-Shirt</h3>
+            <div class="price">₹499</div>
+            <a href="https://amzn.to/46p4F6S" target="_blank" class="buy-btn">
+                Buy on Amazon
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    Disclaimer: This website contains affiliate links. 
+    We may earn a commission at no extra cost to you.
+</footer>
 
 </body>
 </html>
