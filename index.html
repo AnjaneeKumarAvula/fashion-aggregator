@@ -398,6 +398,46 @@ function removeWardrobe(index) {
     wardrobeItems.splice(index, 1);
     renderWardrobe();
 }
+    const uploadBtn = document.getElementById("uploadBtn");
+const uploadDropdown = document.getElementById("uploadDropdown");
+const hiddenFileInput = document.getElementById("hiddenFileInput");
+
+let selectedUploadCategory = null;
+
+// Toggle dropdown
+uploadBtn.addEventListener("click", function() {
+    uploadDropdown.style.display =
+        uploadDropdown.style.display === "block" ? "none" : "block";
+});
+
+// When category selected
+function selectCategory(category) {
+    selectedUploadCategory = category;
+    uploadDropdown.style.display = "none";
+    hiddenFileInput.click();
+}
+
+// Handle file upload
+hiddenFileInput.addEventListener("change", function(event) {
+    const files = event.target.files;
+    if (!files.length || !selectedUploadCategory) return;
+
+    for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            wardrobeItems.push({
+                image: e.target.result,
+                category: selectedUploadCategory
+            });
+            renderWardrobe();
+        };
+
+        reader.readAsDataURL(files[i]);
+    }
+
+    hiddenFileInput.value = "";
+});
 function openCategory(category) {
     const overlay = document.getElementById("overlay");
     const modalItems = document.getElementById("modalItems");
