@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Black Casual Shirt",
+    "price": "₹799",
+    "image": "https://dummyimage.com/300x250/000/fff&text=Black+Shirt",
+    "link": "https://amzn.to/46p4F6S"
+  },
+  {
+    "title": "Light Blue Denim Jeans",
+    "price": "₹1299",
+    "image": "https://dummyimage.com/300x250/1e90ff/ffffff&text=Blue+Jeans",
+    "link": "https://amzn.to/46p4F6S"
+  },
+  {
+    "title": "Classic White T-Shirt",
+    "price": "₹499",
+    "image": "https://dummyimage.com/300x250/ffffff/000000&text=White+Tshirt",
+    "link": "https://amzn.to/46p4F6S"
+  }
+]
