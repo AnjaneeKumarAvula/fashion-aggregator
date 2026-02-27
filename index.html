@@ -129,7 +129,7 @@
     <h2>Your Wardrobe</h2>
 
         <div style="text-align:center; margin-bottom:20px;">
-            <input type="file" id="wardrobeInput" accept="image/*">
+            <input type="file" id="wardrobeInput" accept="image/*" multiple>
         </div>
 
 <div id="wardrobeGallery" style="
@@ -269,20 +269,23 @@ const wardrobeGallery = document.getElementById("wardrobeGallery");
 const wardrobeCount = document.getElementById("wardrobeCount");
 
 wardrobeInput.addEventListener("change", function(event) {
-    const file = event.target.files[0];
+    const files = event.target.files;
 
-    if (!file) return;
+    if (!files.length) return;
 
-    const reader = new FileReader();
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
 
-    reader.onload = function(e) {
-        const imageUrl = e.target.result;
+        const reader = new FileReader();
 
-        wardrobeItems.push(imageUrl);
-        renderWardrobe();
-    };
+        reader.onload = function(e) {
+            const imageUrl = e.target.result;
+            wardrobeItems.push(imageUrl);
+            renderWardrobe();
+        };
 
-    reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
+    }
 });
 
 function renderWardrobe() {
